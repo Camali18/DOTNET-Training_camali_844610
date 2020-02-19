@@ -1,0 +1,53 @@
+--(1)SELECT * FROM EMPLOYEE;
+--(2)SELECT SALARY FROM EMPLOYEE;
+--(3)SELECT DISTINCT JOB_NAME FROM EMPLOYEE;
+--(4)SELECT EMP_NAME,SALARY,SALARY*1.15 AS "NO OF DOLLARS" FROM EMPLOYEE;
+--(5)SELECT EMP_NAME+' & '+JOB_NAME AS "EMPLOYEE & JOB" FROM EMPLOYEE;
+--(6)SELECT EMP_NAME+' ( '+JOB_NAME+')' AS "EMPLOYEE" FROM EMPLOYEE;
+--(7)SELECT EMP_NAME,FORMAT( HIRE_DATE,'MMMMMMM, dd,yyyy')AS 'DATE' FROM EMPLOYEE; 
+--(8)select emp_name, len(REPLACE(EMP_NAME,' ','' )) FROM EMPLOYEE;
+--(9)SELECT EMP_ID,SALARY,COMMISSION FROM EMPLOYEE;
+--(10)SELECT distinct DEP_NAME FROM DEPARTMENT;
+--(11)SELECT EMP_NAME FROM EMPLOYEE WHERE dep_id!=2001;
+--(12)select emp_name from employee where YEAR(hire_date)<2015;
+--(13)select avg(salary)from employee where job_name = 'analyst';
+--(14)select * from employee where emp_name='lily';
+--(15)select * from employee where commission > salary;
+--(16)select emp_name,salary from EMPLOYEE where salary*1.25 > 3000 ;
+--(17)select emp_name from EMPLOYEE where len(emp_name)=6; 
+--(18)select emp_name from employee where(hire_date)= (convert(date,'1-feb-2001'));
+--(19)select emp_name+' works for '+convert (varchar (20),manager_id) as'name' from employee;
+--(20)select * from employee where job_name = 'clerk';
+--(21)select EMP_NAME from employee where datediff (year ,hire_date,getdate())>10;
+--(22)select emp_name from employee where salary<3500;
+--(23)select EMP_NAME,job_name,salary from employee where job_name = 'DEV' ;
+--(24)SELECT EMP_NAME FROM EMPLOYEE WHERE YEAR (HIRE_DATE) = 2001;
+--(25)select EMP_NAME,EMP_ID,HIRE_DATE,SALARY from employee WHERE (HIRE_DATE)< (convert(date,'1-april-2001'));
+--(26)select emp_name,job_name from employee where MANAGER_ID IS NULL
+--(27)select EMP_NAME from employee WHERE (HIRE_DATE)=(convert(date,'1-MAY-2001'));
+--(28)SELECT EMP_ID,EMP_NAME,SALARY,DATEDIFF(YEAR,HIRE_DATE,GETDATE())AS 'EXPERIANCE' FROM EMPLOYEE WHERE MANAGER_ID=200 
+--(29)SELECT EMP_ID,EMP_NAME,SALARY,DATEDIFF(YEAR,HIRE_DATE,GETDATE())AS 'EXPERIANCE' FROM EMPLOYEE WHERE SALARY/30 >100 
+--(30)SELECT EMP_NAME FROM EMPLOYEE WHERE DATEDIFF(YEAR,HIRE_DATE,'31-DEC-2009')>8
+--(31)SELECT EMP_NAME FROM EMPLOYEE WHERE SALARY%2!=0 ;
+--(32)SELECT EMP_NAME FROM EMPLOYEE WHERE LEN(CONVERT(INT,SALARY))=3
+--(33)SELECT EMP_NAME FROM EMPLOYEE WHERE month (HIRE_DATE)='04'
+--(34)SELECT EMP_NAME FROM EMPLOYEE WHERE daY (HIRE_DATE)<'19' 
+--(35) SELECT EMP_NAME FROM EMPLOYEE WHERE JOB_NAME='DEV'AND (datediff (year ,hire_date,getdate()))>8
+--(36)SELECT EMP_NAME FROM EMPLOYEE WHERE(DEP_ID =2 or dep_id= 1) AND(year (HIRE_DATE)='2001')
+--(37) same (36)
+--(38)SELECT EMP_NAME FROM EMPLOYEE WHERE (DEP_ID=2001)and(job_name='clerk') 
+--(39)SELECT EMP_ID,EMP_NAME,SALARY,job_name from employee where(salary*12<34000 and commission>salary)and(job_name='dev' and dep_id=2)
+--(40)SELECT EMP_NAME FROM EMPLOYEE WHERE JOB_NAME='DEV'or job_name='clerk'
+--(41)SELECT EMP_NAME FROM EMPLOYEE WHERE month(hire_date)!=04
+--(42)SELECT EMP_NAME FROM EMPLOYEE WHERE year(hire_date)=2001
+--(43)SELECT EMP_NAME FROM EMPLOYEE WHERE (year(hire_date)=2001 and month(hire_date)=02)
+--(44)SELECT EMP_NAME FROM EMPLOYEE WHERE (salary*12)>24000 and (salary*12)<500000   
+--(45)SELECT EMP_NAME FROM EMPLOYEE WHERE ((HIRE_DATE)=(convert(date,'20-dec-2001'))) or ((HIRE_DATE)=(convert(date,'10-May-1991'))) or ((HIRE_DATE)=(convert(date,'03-Dec-1991'))) 
+--(46)SELECT EMP_NAME FROM EMPLOYEE WHERE (manager_id=200)or(manager_id=1)or(manager_id=4)or(manager_id=3)
+--(47)SELECT EMP_NAME FROM EMPLOYEE WHERE year(hire_date)=2001 and month(hire_date)>04
+--(48)SELECT EMP_NAME FROM EMPLOYEE WHERE year(hire_date) between 1990 and 2000
+--(49)SELECT manager_id FROM EMPLOYEE  where dep_id=1 or dep_id=2
+--(50)SELECT EMP_NAME FROM EMPLOYEE WHERE month(hire_date)=04 and (salary)between 1000 and 20000
+--(51)SELECT EMP_NAME FROM EMPLOYEE WHERE year(hire_date)>1990 or year(hire_date)<1990
+/*(52)SELECT EMP_NAME,dep_name FROM EMPLOYEE 
+inner join department d on d.dep_id=e.dep_id*/
